@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function MyForm() {
     const [formData, setFormData] = useState({
-        firstName:"", lastName:"", email:""
+        firstName:"", lastName:"", email:"", comment:""
     })
     
     function handleChange(event){
@@ -18,7 +18,7 @@ function MyForm() {
 
   return (
     <form>
-        <h2>Sign Up</h2>
+        <h2>Inputs</h2>
         <input 
             type="text"
             placeholder='First Name'
@@ -40,6 +40,15 @@ function MyForm() {
             name="email"
             value={formData.email}        
         />
+        <h2>Textarea</h2>
+        <textarea 
+            type="text"
+            placeholder='Your Comment goes here'
+            onChange={handleChange}
+            name="comment"
+            value={formData.comment}        
+        />
+
 
     </form>
   )
