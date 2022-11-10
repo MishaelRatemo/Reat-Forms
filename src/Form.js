@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 function MyForm() {
-    const [formdata, setFormData] = useState({
-        firstName:"", lastName:""
+    const [formData, setFormData] = useState({
+        firstName:"", lastName:"", email:""
     })
     
     function handleChange(event){
@@ -14,14 +14,8 @@ function MyForm() {
         })
     }
 
-    console.log(formdata)
+    console.log(formData)
 
-//     function handleFNChange(event){
-//         setFirstName(event.target.value)
-//     }
-//     function handleLNChange(event){
-//         setLastName(event.target.value)
-//     }
   return (
     <form>
         <h2>Sign Up</h2>
@@ -29,13 +23,22 @@ function MyForm() {
             type="text"
             placeholder='First Name'
             onChange={handleChange}
-            name="firstName"        
+            name="firstName"
+            value={formData.firstName}        
         />
         <input 
             type="text"
             placeholder='Last Name'
             onChange={handleChange}
-            name="lastName"        
+            name="lastName"
+            value={formData.lastName}        
+        />
+        <input 
+            type="email"
+            placeholder='Email Address'
+            onChange={handleChange}
+            name="email"
+            value={formData.email}        
         />
 
     </form>
