@@ -10,7 +10,8 @@ function MyForm() {
     csharp: false,
     python: false,
     javascript: false,
-    education:""
+    education:"",
+    bank: ""
   });
 
   function handleChange(event) {
@@ -147,6 +148,25 @@ function MyForm() {
             </div>
           </fieldset>           
         </div>
+      </div>
+      <div className="box">
+        <h2>Select & Option Elements</h2>
+        <label htmlFor="bank">Select Your Best Bank</label>
+        <select 
+                name="bank" 
+                id="bank"
+                onChange={handleChange}
+                value={formData.bank}
+                >
+                <option value="">--Select--</option>
+                <option value="DTB">DTB</option>
+                <option value="KCB">KCB</option>
+                <option value="ABSA">ABSA</option>
+                <option value="COOP">COOP</option>
+                <option value="Other">OTHER</option>
+
+
+        </select>
       </div>
     </form>
   );
