@@ -25,10 +25,17 @@ function MyForm() {
     });
   }
 
-  console.log(formData);
+function handleSubmit(event){
+      event.preventDefault()
+
+      console.log(formData)
+
+}
+
+  // console.log(formData);
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="box">
         <h2>Inputs</h2>
         <input
@@ -164,10 +171,9 @@ function MyForm() {
                 <option value="ABSA">ABSA</option>
                 <option value="COOP">COOP</option>
                 <option value="Other">OTHER</option>
-
-
         </select>
       </div>
+      <button>Sign Up</button>
     </form>
   );
 }
