@@ -7,18 +7,19 @@ function MyForm() {
     email: "",
     comment: "",
     java: false,
-    csharp:false,
-    python:false,
-    javascript:false
+    csharp: false,
+    python: false,
+    javascript: false,
+    education:""
   });
 
   function handleChange(event) {
-    const {name, value,type,checked} = event.target
+    const { name, value, type, checked } = event.target;
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
         // [event.target.name]: event.target.value,
-        [name]: type==="checkbox" ?checked : value
+        [name]: type === "checkbox" ? checked : value,
       };
     });
   }
@@ -53,52 +54,100 @@ function MyForm() {
       </div>
 
       <div className="box">
-            <h2>Textarea</h2>
-            <textarea
-                type="text"
-                placeholder="Your Comment goes here"
-                onChange={handleChange}
-                name="comment"
-                value={formData.comment}
-            />
+        <h2>Textarea</h2>
+        <textarea
+          type="text"
+          placeholder="Your Comment goes here"
+          onChange={handleChange}
+          name="comment"
+          value={formData.comment}
+        />
       </div>
       <div className="box">
         <h2>CheckBox</h2>
-        <label htmlFor="">Programming languages</label>    
-        <div className="">
-            <input 
-                type="checkbox" 
-                onChange={handleChange}
-                checked={formData.java} 
-                id="java"
-                name="java"/>    
-            <label htmlFor="java">Java</label> 
+        <label htmlFor="">Programming languages</label>
+        <div className="checkbox">
+          <input
+            type="checkbox"
+            onChange={handleChange}
+            checked={formData.java}
+            id="java"
+            name="java"
+          />
+          <label htmlFor="java">Java</label>
 
-            <input 
-                type="checkbox" 
-                onChange={handleChange}
-                checked={formData.csharp} 
-                id="csharp"
-                name="csharp"/>    
-            <label htmlFor="csharp">C Sharp</label> 
+          <input
+            type="checkbox"
+            onChange={handleChange}
+            checked={formData.csharp}
+            id="csharp"
+            name="csharp"
+          />
+          <label htmlFor="csharp">C Sharp</label>
 
-            <input 
-                type="checkbox" 
-                onChange={handleChange}
-                checked={formData.python} 
-                id="python"
-                name="python"/>    
-            <label htmlFor="python">Python</label> 
+          <input
+            type="checkbox"
+            onChange={handleChange}
+            checked={formData.python}
+            id="python"
+            name="python"
+          />
+          <label htmlFor="python">Python</label>
 
-            <input 
-                type="checkbox" 
-                onChange={handleChange}
-                checked={formData.javascript} 
-                id="javascript"
-                name="javascript"/>    
-            <label htmlFor="javascript">JavaScript</label> 
+          <input
+            type="checkbox"
+            onChange={handleChange}
+            checked={formData.javascript}
+            id="javascript"
+            name="javascript"
+          />
+          <label htmlFor="javascript">JavaScript</label>
         </div>
-    </div>          
+        <div className="">
+          <h2>Radio Buttons</h2>
+           <fieldset >
+            <legend>Highest Level of Education</legend>
+            <div >
+              <input
+                type="radio"
+                name="education"
+                value="masters"
+                id="masters"
+                onChange={handleChange}
+                checked={formData.education === "masters"}
+              />
+              <label htmlFor="masters">Masters</label> <br />
+              <input
+                type="radio"
+                name="education"
+                value="bachelors"
+                id="bachelors"
+                onChange={handleChange}
+                checked={formData.education === "bachelors"}
+              />
+              <label htmlFor="bachelors">Bachelor</label> <br />
+              <input
+                type="radio"
+                name="education"
+                value="diploma"
+                id="diploma"
+                onChange={handleChange}
+                checked={formData.education === "diploma"}
+              />
+              <label htmlFor="diploma">Diploma</label><br />
+              <input
+                type="radio"
+                name="education"
+                value="other"
+                id="other"
+                onChange={handleChange}
+                checked={formData.education === "other"}
+              />
+              <label htmlFor="other">Other</label> <br />
+            </div>
+          </fieldset>           
+        </div>
+      </div>
     </form>
   );
 }
